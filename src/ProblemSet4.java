@@ -17,10 +17,40 @@
  * This problem set contains 10 exercises worth 50 points. It is due no later than
  * 11:59pm on Sunday, November 4, 2018. Good luck! 
  */
-
+import java.util.Scanner;
 public class ProblemSet4 {
 	
 	public static void main(String[] args) {
+		ProblemSet4 ps = new ProblemSet4();
+		Scanner in1 = new Scanner(System.in);
 		
+		//ex 1
+		System.out.println("Enter value for 'out'.");
+		String out = in1.nextLine();
+		System.out.println("Enter value for 'in'.");
+		String in = in1.nextLine();
+		ps.surroundMe(out, in);
+		
+		in1.close();
+	}
+	public String surroundMe(String out, String in) {
+		String output;
+		if (out == null || in == null) {
+			System.out.println("Error! 'out' must have 4 characters and 'in' must have 3!");
+			return null;
+		}
+		else {
+			if (out.length() != 4 || in.length() != 3) {
+				System.out.println("Error! 'out' must have 4 characters and 'in' must have 3!");
+				return null;
+			}
+			else {
+				String out1 = out.substring(0, 2);
+				String out2 = out.substring(2, 4);
+				output = out1 + in + out2;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            
+				System.out.println(output);
+				return output;
+			}
+		}
 	}
 }
