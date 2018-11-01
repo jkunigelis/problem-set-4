@@ -30,15 +30,21 @@ public class ProblemSet4 {
 		String out = in1.nextLine();
 		System.out.println("Enter value for 'in'.");
 		String in = in1.nextLine();
-		ps.surroundMe(out, in); */
+		ps.surroundMe(out, in); 
 		
-		//ex 1
+		//ex 2
 		System.out.println("Exercise 2");
 		System.out.println("Enter string.");
 		String str = in1.nextLine();
 		System.out.println("Enter value for amount of letters.");
 		int n = in1.nextInt();
-		ps.endsMeet(str, n);
+		ps.endsMeet(str, n); */
+		
+		//ex 3
+		System.out.println("Exercise 3");
+		System.out.println("Enter string.");
+		String str = in1.nextLine();
+		ps.middleMan(str);
 		
 		in1.close();
 	}
@@ -83,5 +89,9 @@ public class ProblemSet4 {
 			System.out.println(output);
 			return output;
 		}
+	}
+	public String middleMan(String str) {
+		String output;
+		if (str.equals.length());)
 	}
 }
