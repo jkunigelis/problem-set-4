@@ -23,13 +23,22 @@ public class ProblemSet4 {
 	public static void main(String[] args) {
 		ProblemSet4 ps = new ProblemSet4();
 		Scanner in1 = new Scanner(System.in);
-		
+		/*
 		//ex 1
+		System.out.println("Exercise 1");
 		System.out.println("Enter value for 'out'.");
 		String out = in1.nextLine();
 		System.out.println("Enter value for 'in'.");
 		String in = in1.nextLine();
-		ps.surroundMe(out, in);
+		ps.surroundMe(out, in); */
+		
+		//ex 1
+		System.out.println("Exercise 2");
+		System.out.println("Enter string.");
+		String str = in1.nextLine();
+		System.out.println("Enter value for amount of letters.");
+		int n = in1.nextInt();
+		ps.endsMeet(str, n);
 		
 		in1.close();
 	}
@@ -51,6 +60,28 @@ public class ProblemSet4 {
 				System.out.println(output);
 				return output;
 			}
+		}
+	}
+	public String endsMeet(String str, int n) {
+		String output;
+		if (str == null) {
+			System.out.println("Error! Values cannot be null!");
+			return null;
+		}
+		if (str.length() > 10) {
+			System.out.println("Error! Must be less than 10 characters!");
+			return null;
+		}
+		if ((n < 1) || (n > str.length())) {
+			System.out.println("Error! Values must be between 1 and the length of the string.");
+			return null;
+		}
+		else {
+			String begin = str.substring(0, n);
+			String end = str.substring((str.length() - n), str.length());
+			output = begin + end;
+			System.out.println(output);
+			return output;
 		}
 	}
 }
