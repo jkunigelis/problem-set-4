@@ -50,7 +50,7 @@ public class ProblemSet4 {
 		System.out.println("Exercise 4");
 		System.out.println("Enter string.");
 		String str = in1.nextLine();
-		ps.doubleVision(str); */
+		ps.doubleVision(str); 
 		
 		//ex 5
 		System.out.println("Exercise 5");
@@ -58,7 +58,16 @@ public class ProblemSet4 {
 		String str = in1.nextLine();
 		System.out.println("Enter target.");
 		String target = in1.nextLine();
-		ps.centered(str, target);		
+		ps.centered(str, target); */
+		
+		//ex 6
+		System.out.println("Exercise 6");
+		System.out.println("Enter double.");
+		double number = in1.nextDouble();
+		System.out.println("Enter either 'r', 'f', or 'c'.");
+		String temp = in1.next();
+		char operation = temp.charAt(0);
+		ps.upOrDown(number, operation);
 		
 		in1.close();
 	}
@@ -191,6 +200,27 @@ public class ProblemSet4 {
 				System.out.println(output);
 				return false;
 			}
+		}
+	}
+	public int upOrDown(double number, char operation) {
+		int output = 0;
+		switch (operation) {
+		case 'f':
+			output = (int)Math.floor(number);
+			System.out.println(output);
+			return output;
+		case 'r':
+			output = (int)Math.round(number);
+			System.out.println(output);
+			return output;
+		case 'c':
+			output = (int)Math.ceil(number);
+			System.out.println(output);
+			return output;
+		default:
+			output = -1;
+			System.out.println(output);
+			return output;
 		}
 	}
 }
