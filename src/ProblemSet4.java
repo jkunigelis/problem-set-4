@@ -92,6 +92,24 @@ public class ProblemSet4 {
 	}
 	public String middleMan(String str) {
 		String output;
-		if (str.equals.length());)
+		if (str.length() % 2 == 0) {
+			System.out.println("String must have odd amount of characters.");
+			return null;
+		}
+		else {
+			int start = 0;
+			int end = str.length();
+			String temp = null;
+			for (int i = 0; i < str.length(); i++) {
+				temp = str.substring(start, end);
+				if (temp.length() != 3) {
+					start++;
+					end--;
+				}
+			}
+			output = temp;
+			System.out.println(output);
+			return output;
+		}
 	}
 }
