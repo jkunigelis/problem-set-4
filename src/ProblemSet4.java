@@ -43,22 +43,22 @@ public class ProblemSet4 {
 		//ex 3
 		System.out.println("Exercise 3");
 		System.out.println("Enter string.");
-		String str = in1.nextLine();
-		ps.middleMan(str); 
+		String string = in1.nextLine();
+		ps.middleMan(string); 
 		
 		//ex 4
 		System.out.println("Exercise 4");
 		System.out.println("Enter string.");
-		String str = in1.nextLine();
-		ps.doubleVision(str); 
+		String stringToDouble = in1.nextLine();
+		ps.doubleVision(stringToDouble); 
 		
 		//ex 5
 		System.out.println("Exercise 5");
 		System.out.println("Enter string.");
-		String str = in1.nextLine();
+		String fullStr = in1.nextLine();
 		System.out.println("Enter target.");
 		String target = in1.nextLine();
-		ps.centered(str, target); */
+		ps.centered(fullStr, target); 
 		
 		//ex 6
 		System.out.println("Exercise 6");
@@ -67,7 +67,16 @@ public class ProblemSet4 {
 		System.out.println("Enter either 'r', 'f', or 'c'.");
 		String temp = in1.next();
 		char operation = temp.charAt(0);
-		ps.upOrDown(number, operation);
+		ps.upOrDown(number, operation); */
+		
+		//ex 7
+		System.out.println("Exercise 7");
+		System.out.println("Enter text.");
+		String text = in1.nextLine();
+		System.out.println("Enter letter to find.");
+		String temp = in1.next();
+		char ending = temp.charAt(0);
+		ps.countMe(text, ending);	
 		
 		in1.close();
 	}
@@ -222,5 +231,28 @@ public class ProblemSet4 {
 			System.out.println(output);
 			return output;
 		}
+	}
+	public int countMe(String text, char end) {
+		int count = 0;
+		if (text == null) {
+			System.out.println("Error! Values cannot be null!");
+			return -1;
+		}
+		for (int i = 0; i <= (text.length() - 1); i++) {
+			//			if space			or end of string
+			if (text.charAt(i) == ' ' || i == (text.length() - 1)) {
+				if (Character.isLetter(text.charAt(i - 1)) || Character.isLetter(text.charAt(i))) {
+					if (text.charAt(i - 1) == end || text.charAt(i) == end) {
+						count++;
+					}
+				}
+				else {
+					System.out.println("Error! Words must end in letter.");
+					return -1;
+				}
+			}
+		}
+		System.out.println(count);
+		return count;
 	}
 }
