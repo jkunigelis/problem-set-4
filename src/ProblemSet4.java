@@ -44,13 +44,21 @@ public class ProblemSet4 {
 		System.out.println("Exercise 3");
 		System.out.println("Enter string.");
 		String str = in1.nextLine();
-		ps.middleMan(str); */
+		ps.middleMan(str); 
 		
 		//ex 4
 		System.out.println("Exercise 4");
 		System.out.println("Enter string.");
 		String str = in1.nextLine();
-		ps.doubleVision(str);
+		ps.doubleVision(str); */
+		
+		//ex 5
+		System.out.println("Exercise 5");
+		System.out.println("Enter string.");
+		String str = in1.nextLine();
+		System.out.println("Enter target.");
+		String target = in1.nextLine();
+		ps.centered(str, target);		
 		
 		in1.close();
 	}
@@ -141,6 +149,48 @@ public class ProblemSet4 {
 			}
 			System.out.println(output);
 			return output;
+		}
+	}
+	public boolean centered(String str, String target) {
+		int found = 0;
+		boolean output;
+		String before;
+		String after;
+		if (str == null || target == null) {
+			System.out.println("Error! Values cannot be null!");
+			return false;
+		}
+		if (target.length() != 3) {
+			System.out.println("Target must be 3 characters.");
+			return false;
+		}
+		else {
+			int i = 0;
+			while (i <= (str.length() - 3)) {
+				if (target.equals(str.substring(i, (i + 3))) == true) {
+					if (i < 2) {
+						before = str.substring(0, 1);
+					}
+					else {
+						before = str.substring(0, (i - 1));
+					}
+					after = str.substring((i + 4), str.length());
+					if (((before.length() - after.length()) == 0) || ((before.length() - after.length()) == 1)) {
+						found++;
+					}
+				}
+				i++;
+			}
+			if (found != 0) {
+				output = true;
+				System.out.println(output);
+				return true;
+			}
+			else {
+				output = false;
+				System.out.println(output);
+				return false;
+			}
 		}
 	}
 }
