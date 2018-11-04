@@ -38,13 +38,19 @@ public class ProblemSet4 {
 		String str = in1.nextLine();
 		System.out.println("Enter value for amount of letters.");
 		int n = in1.nextInt();
-		ps.endsMeet(str, n); */
+		ps.endsMeet(str, n); 
 		
 		//ex 3
 		System.out.println("Exercise 3");
 		System.out.println("Enter string.");
 		String str = in1.nextLine();
-		ps.middleMan(str);
+		ps.middleMan(str); */
+		
+		//ex 4
+		System.out.println("Exercise 4");
+		System.out.println("Enter string.");
+		String str = in1.nextLine();
+		ps.doubleVision(str);
 		
 		in1.close();
 	}
@@ -92,6 +98,10 @@ public class ProblemSet4 {
 	}
 	public String middleMan(String str) {
 		String output;
+		if (str == null) {
+			System.out.println("Error! Values cannot be null!");
+			return null;
+		}
 		if (str.length() % 2 == 0) {
 			System.out.println("String must have odd amount of characters.");
 			return null;
@@ -108,6 +118,27 @@ public class ProblemSet4 {
 				}
 			}
 			output = temp;
+			System.out.println(output);
+			return output;
+		}
+	}
+	public String doubleVision(String str) {
+		String output = null;
+		if (str == null) {
+			System.out.println("Error! Values cannot be null!");
+			return null;
+		}
+		else {
+			int i = 0;
+			while (i < str.length()) {
+				if (output == null) {
+					output = str.substring(i, (i + 1)) + str.substring(i, (i + 1));
+				}
+				else {
+					output = output + str.substring(i, (i + 1)) + str.substring(i, (i + 1));
+				}
+				i++;
+			}
 			System.out.println(output);
 			return output;
 		}
