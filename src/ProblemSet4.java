@@ -24,7 +24,7 @@ public class ProblemSet4 {
 	public static void main(String[] args) {
 		ProblemSet4 ps = new ProblemSet4();
 		Scanner in1 = new Scanner(System.in);
-		/*
+		
 		//ex 1
 		System.out.println("Exercise 1");
 		System.out.println("Enter value for 'out'.");
@@ -39,7 +39,9 @@ public class ProblemSet4 {
 		String str = in1.nextLine();
 		System.out.println("Enter value for amount of letters.");
 		int n = in1.nextInt();
-		ps.endsMeet(str, n); 
+		ps.endsMeet(str, n);
+		
+		in1.nextLine();
 		
 		//ex 3
 		System.out.println("Exercise 3");
@@ -68,16 +70,19 @@ public class ProblemSet4 {
 		System.out.println("Enter either 'r', 'f', or 'c'.");
 		String temp = in1.next();
 		char operation = temp.charAt(0);
-		ps.upOrDown(number, operation); 
+		ps.upOrDown(number, operation);
 		
 		//ex 7
 		System.out.println("Exercise 7");
 		System.out.println("Enter text.");
+		in1.nextLine();
 		String text = in1.nextLine();
 		System.out.println("Enter letter to find.");
-		String temp = in1.next();
-		char ending = temp.charAt(0);
+		String temp1 = in1.next();
+		char ending = temp1.charAt(0);
 		ps.countMe(text, ending);	
+		
+		in1.nextLine();
 		
 		//ex 8
 		System.out.println("Exercise 8");
@@ -89,7 +94,7 @@ public class ProblemSet4 {
 		System.out.println("Exercise 9");
 		System.out.println("Enter text.");
 		String setOfTrips = in1.nextLine();
-		ps.triplets(setOfTrips);	*/
+		ps.triplets(setOfTrips);
 		
 		//ex 10
 		System.out.println("Exercise 10");
