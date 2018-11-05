@@ -83,13 +83,21 @@ public class ProblemSet4 {
 		System.out.println("Exercise 8");
 		System.out.println("Enter text.");
 		String strOfNotsNIns = in1.nextLine();
-		ps.isNotEqual(strOfNotsNIns);	*/	
+		ps.isNotEqual(strOfNotsNIns);	
 		
 		//ex 9
 		System.out.println("Exercise 9");
 		System.out.println("Enter text.");
 		String setOfTrips = in1.nextLine();
-		ps.triplets(setOfTrips);
+		ps.triplets(setOfTrips);	*/
+		
+		//ex 10
+		System.out.println("Exercise 10");
+		System.out.println("Enter string.");
+		String setOfStuff = in1.nextLine();
+		System.out.println("Enter boolean.");
+		boolean digits = in1.nextBoolean();
+		ps.addMe(setOfStuff, digits);
 
 		in1.close();
 	}
@@ -313,5 +321,48 @@ public class ProblemSet4 {
 		}
 		System.out.println(count);
 		return count;
+	}
+	public int addMe(String str, boolean digits) {
+		boolean temp = false;
+		int temp2;
+		int sum = 0;
+		if (str == null) {
+			System.out.println(-1);
+			return -1;
+		}
+		for (int i = 0; i < str.length(); i++) {
+			if (str.charAt(i) == ' ') {
+				System.out.println(-1);
+				return -1;
+			}
+		}
+		if (digits == true) {
+			for (int i = 0; i < str.length(); i++) {
+				if (Character.isDigit(str.charAt(i)) == true) {
+					sum = sum + Character.getNumericValue(str.charAt(i));
+				}
+			}
+		}
+		else {
+			for (int i = 0; i < str.length(); i++) {
+				if (Character.isDigit(str.charAt(i)) == true) {
+					temp = true;
+					temp2 = i;
+					i++;
+					while (temp == true && (i < str.length())) {
+						if (Character.isDigit(str.charAt(i)) == true) {
+							temp = true;
+							i++;
+						}
+						else {
+							temp = false;
+						}
+					}
+					sum = sum + Integer.valueOf(str.substring(temp2, i));
+				}
+			}
+		}
+		System.out.println(sum);
+		return sum;
 	}
 }
