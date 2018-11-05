@@ -77,14 +77,20 @@ public class ProblemSet4 {
 		System.out.println("Enter letter to find.");
 		String temp = in1.next();
 		char ending = temp.charAt(0);
-		ps.countMe(text, ending);	*/
+		ps.countMe(text, ending);	
 		
 		//ex 8
 		System.out.println("Exercise 8");
 		System.out.println("Enter text.");
 		String strOfNotsNIns = in1.nextLine();
-		ps.isNotEqual(strOfNotsNIns);		
+		ps.isNotEqual(strOfNotsNIns);	*/	
 		
+		//ex 9
+		System.out.println("Exercise 9");
+		System.out.println("Enter text.");
+		String setOfTrips = in1.nextLine();
+		ps.triplets(setOfTrips);
+
 		in1.close();
 	}
 	public String surroundMe(String out, String in) {
@@ -182,11 +188,11 @@ public class ProblemSet4 {
 		String before;
 		String after;
 		if (str == null || target == null) {
-			System.out.println("Error! Values cannot be null!");
+			System.out.println(false);
 			return false;
 		}
 		if (target.length() != 3) {
-			System.out.println("Target must be 3 characters.");
+			System.out.println(false);
 			return false;
 		}
 		else {
@@ -242,7 +248,7 @@ public class ProblemSet4 {
 	public int countMe(String text, char end) {
 		int count = 0;
 		if (text == null) {
-			System.out.println("Error! Values cannot be null!");
+			System.out.println(-1);
 			return -1;
 		}
 		for (int i = 0; i <= (text.length() - 1); i++) {
@@ -254,7 +260,7 @@ public class ProblemSet4 {
 					}
 				}
 				else {
-					System.out.println("Error! Words must end in letter.");
+					System.out.println(-1);
 					return -1;
 				}
 			}
@@ -267,7 +273,7 @@ public class ProblemSet4 {
 		int countNot = 0;
 		int countIs = 0;
 		if (str == null) {
-			System.out.println("Error! Values cannot be null!");
+			System.out.println(false);
 			return false;
 		}
 		for (int i = 0; i <= (str.length() - 2); i++) {
@@ -285,5 +291,27 @@ public class ProblemSet4 {
 		}
 		System.out.println(isEqual);
 		return isEqual;
+	}
+	public int triplets(String str) {
+		String temp;
+		int count = 0;
+		if (str == null) {
+			System.out.println(-1);
+			return -1;
+		}
+		for (int i = 0; i < str.length(); i++) {
+			if (Character.isLetter(str.charAt(i)) == false || str.charAt(i) == ' ') {
+				System.out.println(-1);
+				return -1;
+			}
+		}
+		for (int i = 0; i <= (str.length() - 3); i++) {
+			temp = Character.toString(str.charAt(i)) + Character.toString(str.charAt(i)) + Character.toString(str.charAt(i));
+			if (Objects.equals(temp, str.substring(i, (i + 3)))) {
+				count++;
+			}
+		}
+		System.out.println(count);
+		return count;
 	}
 }
