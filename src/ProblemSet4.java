@@ -17,6 +17,7 @@
  * This problem set contains 10 exercises worth 50 points. It is due no later than
  * 11:59pm on Sunday, November 4, 2018. Good luck! 
  */
+import java.util.Objects;
 import java.util.Scanner;
 public class ProblemSet4 {
 	
@@ -67,7 +68,7 @@ public class ProblemSet4 {
 		System.out.println("Enter either 'r', 'f', or 'c'.");
 		String temp = in1.next();
 		char operation = temp.charAt(0);
-		ps.upOrDown(number, operation); */
+		ps.upOrDown(number, operation); 
 		
 		//ex 7
 		System.out.println("Exercise 7");
@@ -76,7 +77,13 @@ public class ProblemSet4 {
 		System.out.println("Enter letter to find.");
 		String temp = in1.next();
 		char ending = temp.charAt(0);
-		ps.countMe(text, ending);	
+		ps.countMe(text, ending);	*/
+		
+		//ex 8
+		System.out.println("Exercise 8");
+		System.out.println("Enter text.");
+		String strOfNotsNIns = in1.nextLine();
+		ps.isNotEqual(strOfNotsNIns);		
 		
 		in1.close();
 	}
@@ -254,5 +261,29 @@ public class ProblemSet4 {
 		}
 		System.out.println(count);
 		return count;
+	}
+	public boolean isNotEqual(String str) {
+		boolean isEqual = false;
+		int countNot = 0;
+		int countIs = 0;
+		if (str == null) {
+			System.out.println("Error! Values cannot be null!");
+			return false;
+		}
+		for (int i = 0; i <= (str.length() - 2); i++) {
+			if (i != (str.length() - 2)) {
+				if (Objects.equals(str.substring(i, (i + 3)), "not")) {
+					countNot++;
+				}
+			}
+			if (Objects.equals(str.substring(i, (i + 2)), "is")) {
+				countIs++;
+			}
+		}
+		if (countNot == countIs) {
+			isEqual = true;
+		}
+		System.out.println(isEqual);
+		return isEqual;
 	}
 }
